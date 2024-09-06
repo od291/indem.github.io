@@ -1,0 +1,64 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  max-height: 80vh; /* Hauteur maximale */
+  overflow-y: auto; /* Activer le défilement vertical */
+  position: relative; /* Pour positionner correctement le bouton de fermeture */
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: gray;
+}
+
+.modal-form input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-form .form-group {
+  margin-bottom: 15px;
+}
+
+.modal-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  color: gray;
+}
+
+option {
+  color: black;
+}
