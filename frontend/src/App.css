@@ -296,13 +296,20 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 60px;
+    margin-top: 0px;
     width: 100%; /* Ensure it takes full width */
+    margin-left: 600px;
   }
   
   .no-file-selected {
     color: #000; /* Noir */
   }
+
+  
+  .chart-title h4 {
+    font-size: 20px; /* Ajustez la taille de la police selon vos besoins */
+  }
+  
   
   
   /* End Main  */

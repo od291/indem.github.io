@@ -210,7 +210,7 @@ function Personnel() {
             <th>Prénom(s)</th>
             <th>IM</th>
             <th>Poste</th>
-            <th>Indice</th>
+            <th>Salaire</th>
             <th>Email</th>
             <th>Téléphone</th>
             <th>Date d'embauche</th>

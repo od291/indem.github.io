@@ -42,7 +42,7 @@ function Rapports() {
   // Function to generate PDF document
   const generatePDF = () => (
     <Document>
-      <Page style={styles.page}>
+      <Page size="A4" orientation="landscape" style={styles.page}>
         <View style={styles.section}>
           <Text style={styles.header}>Rapports du</Text>
           <Text style={styles.date}>{startDate}</Text>
@@ -84,17 +84,13 @@ function Rapports() {
       borderBottomColor: '#AAAAAA',
       alignItems: 'center',
       padding: 8,
-
     },
     header3: {
       marginRight: 8,
-
     },
-    header4:{
+    header4: {
       marginRight: 30,
-
     },
-  
     section: {
       flexDirection: 'row',
       borderBottomWidth: 1,

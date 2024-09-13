@@ -152,7 +152,7 @@ function Indemnites() {
 
   const handleSearchChange = (e) => {
     setSearchType(e.target.value);
-    fetchIndemnitesByType(e.target.value); // Fetch data based on search type
+    fetchIndemnitesByType(e.target.value);
   };
 
   const fetchIndemnitesByType = (type) => {
@@ -190,7 +190,65 @@ function Indemnites() {
       <Modal show={showModal} onClose={handleCloseModal}>
         <h2>{modifyId ? 'Modifier Indemnité' : 'Ajouter une Indemnité'}</h2>
         <form className="modal-form" onSubmit={handleSubmit}>
-          {/* Form fields here */}
+        <div className="form-group">
+            <label>ID du Personnel:</label>
+            <select name='id_pers' value={formData.id_pers} onChange={handleChange}>
+              <option value=''>Sélectionner</option>
+              {personnelOptions.map(option => (
+                <option key={option.id_pers} value={option.id_pers}>
+                  {option.id_pers}
+                </option>
+              ))}
+            </select>
+            {errors.id_pers && <p className="error">{errors.id_pers}</p>}
+          </div>
+          <div className="form-group">
+            <label>ID du Responsable:</label>
+            <select name='id_resp' value={formData.id_resp} onChange={handleChange}>
+              <option value=''>Sélectionner</option>
+              {responsableOptions.map(option => (
+                <option key={option.id_resp} value={option.id_resp}>
+                  {option.id_resp}
+                </option>
+              ))}
+            </select>
+            {errors.id_resp && <p className="error">{errors.id_resp}</p>}
+          </div>
+          <div className="form-group">
+            <label>Type:</label>
+            <select name='type' value={formData.type} onChange={handleChange}>
+              <option value=''>Sélectionner</option>
+              <option value='licenciement'>Licenciement</option>
+              <option value='logement'>Logement</option>
+              <option value='déplacement'>Déplacement</option>
+              <option value='ancienneté'>Ancienneté</option>
+            </select>
+            {errors.type && <p className="error">{errors.type}</p>}
+          </div>
+          <div className="form-group">
+            <label>Montant:</label>
+            <input type='number' name='montant' value={formData.montant} onChange={handleChange} />
+            {errors.montant && <p className="error">{errors.montant}</p>}
+          </div>
+          <div className="form-group">
+            <label>Date d'Attribution:</label>
+            <input type='date' name='date_attr' value={formData.date_attr} onChange={handleChange} />
+            {errors.date_attr && <p className="error">{errors.date_attr}</p>}
+          </div>
+          <div className="form-group">
+            <label>Cause:</label>
+            <select name='cause' value={formData.cause} onChange={handleChange}>
+              <option value=''>Sélectionner</option>
+              <option value='mission'>Mission</option>
+              <option value='date embauche plus de 5ans'>Date d'embauche plus de 5 ans</option>
+              <option value='licencement avant fin de contrat'>Licencement avant fin de contrat</option>
+            </select>
+            {errors.cause && <p className="error">{errors.cause}</p>}
+          </div>
+          <div className="form-actions">
+            <button type='submit'>{modifyId ? 'Modifier' : 'Ajouter'}</button>
+            <button type='button' onClick={handleCloseModal}>Annuler</button>
+          </div>
         </form>
       </Modal>
       <table>
