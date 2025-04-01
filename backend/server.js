@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cors = require('cors');
 const multer = require('multer');
 const bcrypt = require('bcrypt');
@@ -17,8 +17,10 @@ const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT // Ajoute le port si nécessaire
 });
+
 
 db.connect(err => {
   if (err) {
